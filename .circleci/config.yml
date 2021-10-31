@@ -24,6 +24,9 @@ jobs:
       - run:
           name: Install dependencies
           command: ./gradlew
+      - run:
+          name: run gradlew tasks
+          command: ./gradlew tasks
       - save_cache:
           paths:
             - ~/.gradle/wrapper
