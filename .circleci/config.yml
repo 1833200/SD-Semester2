@@ -47,11 +47,11 @@ jobs:
       - run:
           name: Run tests
           # Use "./gradlew test" instead if tests are not run in parallel
-          command: ./gradlew test
+          command: chmod +x ./gradlew test
       - run:
           name: Generate code coverage report
           command:
-            ./gradlew jacocoTestReport
+            chmod +x ./gradlew jacocoTestReport
       - store_test_results:
           path: build/test-results/test
       - store_artifacts:
@@ -60,13 +60,13 @@ jobs:
       - store_artifacts:
           path: build/reports/jacoco/test/html
           when: always
-      - run:
-          name: Assemble JAR
-          command: |
-            # Skip this for other nodes
-            if [ "$CIRCLE_NODE_INDEX" == 0 ]; then
-              ./gradlew assemble
-            fi
+      # - run:
+      #     name: Assemble JAR
+      #     command: |
+      #       # Skip this for other nodes
+      #       if [ "$CIRCLE_NODE_INDEX" == 0 ]; then
+      #         ./gradlew assemble
+      #       fi
       # This will be empty for all nodes except the first one
       - store_artifacts:
           path: build/libs
