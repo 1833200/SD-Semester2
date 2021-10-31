@@ -76,8 +76,8 @@ jobs:
       #         ./gradlew assemble
       #       fi
       # This will be empty for all nodes except the first one
-      - store_artifacts:
-          path: build/libs
+      # - store_artifacts:
+      #     path: build/libs
 
 workflows:
   version: 2
