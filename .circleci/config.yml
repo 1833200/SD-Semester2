@@ -56,7 +56,7 @@ jobs:
       - run:
           name: Run tests
           # Use "./gradlew test" instead if tests are not run in parallel
-          command: ./gradlew test
+          command: ./gradlew check
       - run:
           name: Generate code coverage report
           command: ./gradlew jacocoTestReport
