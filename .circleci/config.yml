@@ -23,7 +23,7 @@ jobs:
           command: chmod +x gradlew
       - run:
           name: Install dependencies
-          command: ./gradlew build
+          command: gradlew build
       - save_cache:
           paths:
             - ~/.gradle/wrapper
