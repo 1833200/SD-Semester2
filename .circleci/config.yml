@@ -19,8 +19,11 @@ jobs:
       - restore_cache:
           key: v1-gradle-cache-{{ checksum "build.gradle" }}
       - run:
+          name: Install gradle
+          command: chmod +x gradlew
+      - run:
           name: Install dependencies
-          command: gradle build
+          command: ./gradlew build -x test
       - save_cache:
           paths:
             - ~/.gradle/wrapper
