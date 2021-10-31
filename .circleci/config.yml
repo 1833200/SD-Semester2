@@ -53,10 +53,10 @@ jobs:
           command: chmod +x gradlew
       # - attach_workspace:
       #     at: .
-      # - run:
-      #     name: Run tests
-      #     # Use "./gradlew test" instead if tests are not run in parallel
-      #     command: ./gradlew check
+      - run:
+          name: Run tests
+          # Use "./gradlew test" instead if tests are not run in parallel
+          command: ./gradlew check
       - run:
           name: Generate code coverage report
           command: ./gradlew jacocoTestReport
